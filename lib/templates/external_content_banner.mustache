@@ -37,17 +37,4 @@
         "title": "External content"
     }
 }}
-<div class="alert alert-secondary alert-block fade in">
-    <iframe id="{{iframeid}}" title="{{title}}" class="w-100 border-0"></iframe>
-</div>
-{{#js}}
-(function() {
-    var iframe = document.getElementById('{{iframeid}}');
-    iframe.src = '{{url}}';
-    window.addEventListener('message', function (event) {
-        if (event.source === iframe.contentWindow) {
-            iframe.style.height = event.data + 'px';
-        }
-    });
-})();
-{{/js}}
+

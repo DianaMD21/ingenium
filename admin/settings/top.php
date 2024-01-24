@@ -8,16 +8,14 @@
 $systemcontext = context_system::instance();
 $hassiteconfig = has_capability('moodle/site:config', $systemcontext);
 
-$ADMIN->add('root', new admin_externalpage('adminnotifications', new lang_string('notifications'), "$CFG->wwwroot/$CFG->admin/index.php"));
+$ADMIN->add('root', new admin_settingpage('adminnotifications', ''));
 
-$ADMIN->add('root', new admin_externalpage('registrationmoodleorg', new lang_string('registration', 'admin'),
-        new moodle_url("/admin/registration/index.php")));
+$ADMIN->add('root', new admin_settingpage('registrationmoodleorg', ''));
  // hidden upgrade script
 $ADMIN->add('root', new admin_externalpage('upgradesettings', new lang_string('upgradesettings', 'admin'), "$CFG->wwwroot/$CFG->admin/upgradesettings.php", 'moodle/site:config', true));
 
 // Adding Moodle Services information page.
-$moodleservices = new admin_settingpage('moodleservices', new lang_string('moodleservices',
-    'admin'));
+$moodleservices = new admin_settingpage('moodleservices', '');
 $ADMIN->add('root', $moodleservices);
 
 $userfeedback = new admin_settingpage('userfeedback', new lang_string('feedbacksettings', 'admin'));

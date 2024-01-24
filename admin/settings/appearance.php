@@ -263,7 +263,7 @@ reports,core_reportbuilder|/reportbuilder/index.php',
         new moodle_url('/admin/resetemoticons.php'), 'moodle/site:config', true));
 
     // "documentation" settingpage
-    $temp = new admin_settingpage('documentation', new lang_string('moodledocs'));
+    $temp = new admin_settingpage('documentation', '');
     $temp->add(new admin_setting_configtext('docroot', new lang_string('docroot', 'admin'), new lang_string('configdocroot', 'admin'), 'https://docs.moodle.org', PARAM_URL));
     $ltemp = array('' => get_string('forceno'));
     $ltemp += get_string_manager()->get_list_of_translations(true);

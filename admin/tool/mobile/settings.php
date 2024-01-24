@@ -37,9 +37,7 @@ if ($hassiteconfig) {
         $enablemobiledoclink = html_writer::link($enablemobiledocurl, new lang_string('documentation'));
         $default = is_https() ? 1 : 0;
         $optionalsubsystems = $ADMIN->locate('optionalsubsystems');
-        $optionalsubsystems->add(new admin_setting_enablemobileservice('enablemobilewebservice',
-                new lang_string('enablemobilewebservice', 'admin'),
-                new lang_string('configenablemobilewebservice', 'admin', $enablemobiledoclink), $default));
+        
     }
 
     $ismobilewsdisabled = empty($CFG->enablemobilewebservice);
