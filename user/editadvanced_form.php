@@ -93,7 +93,14 @@ class user_editadvanced_form extends moodleform {
             if (is_enabled_auth($auth)) {
                 $authoptions[$enabled][$auth] = get_string('pluginname', "auth_{$auth}");
             } else {
-                $authoptions[$disabled][$auth] = get_string('pluginname', "auth_{$auth}");
+                $var2 = "auth_mnet";
+                $var3 = "auth_{$auth}";
+                
+                if (strcmp($var3, $var2) !== 0) {
+                    //echo '$var1 is not equal to $var2 in a case sensitive string comparison';
+                    $authoptions[$disabled][$auth] = get_string('pluginname', "auth_{$auth}");
+                }
+                //$authoptions[$disabled][$auth] = get_string('pluginname', "auth_{$auth}");
             }
         }
 
